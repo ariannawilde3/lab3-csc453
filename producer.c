@@ -174,6 +174,6 @@ int main(int argc, char **argv) {
     fprintf(stderr, "PRODUCER(shm): produced=%llu checksum=0x%llx time=%.3fs rate=%.2f Mrec/s\n",
         (unsigned long long)records, (unsigned long long)checksum, sec, (records / sec) / 1e6);
     
-    munmap(mem, shm_size);
+    munmap(hdr, shm_size);
     return 0;
 }
