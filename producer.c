@@ -157,11 +157,12 @@ int main(int argc, char **argv) {
         checksum ^= mix_record(&r);
 
         while (head - hdr-> tail >= capacity) {
-            ring[head % capacity] = r;
-            head++;
-            hdr->head = head;
+            /* spin */
         }
         
+        ring[head % capacity] = r;
+        head++;
+        hdr->head = head;
     }
     
     uint64_t t1 = now_ns();
