@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
             tail++;
             hdr -> tail = tail;
 
-            if (r.endpoint_id < ENDPOINTS) hits[r.endpoint_id]++; {
+            if (r.endpoint_id < ENDPOINTS) hits[r.endpoint_id]++ {
                 checksum ^= mix_record(&r);
                 consumed++;
             } else {
