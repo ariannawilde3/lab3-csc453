@@ -170,7 +170,6 @@ int main(int argc, char **argv) {
                     break;
                 }
             }
-        }
     }
 
     uint64_t t1 = now_ns();
