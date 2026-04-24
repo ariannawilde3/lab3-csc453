@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
     /* See LAB.md "Building the SHM Producer and Consumer" section for step-by-step instructions */
 
     int fd = -1;
-    for (int attempt = 0; attempt < 200; attemp++) {
+    for (int attempt = 0; attempt < 200; attempt++) {
         fd = shm_open(name, O_RDWR, 0600);
         if (fd >= 0) {
             break;
@@ -142,7 +142,7 @@ int main(int argc, char **argv) {
     }
 
     if(!readyOK) {
-        fpritf(stderr, "producer never set ready\n");
+        fprintf(stderr, "producer never set ready\n");
         exit(1);
     }
 
