@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
             readyOK = 1;
             break;
         }
-        usleep(10 * 100);
+        usleep(10 * 1000);
     }
 
     if(!readyOK) {
@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
             tail++;
             hdr -> tail = tail;
 
-            if (r.endpoint_id < ENDPOINTS) hits[r.endpoint_id]++;
+            if (r.endpoint_id < ENDPOINTS) hits[r.endpoint_id]++; {
                 checksum ^= mix_record(&r);
                 consumed++;
             } else {
@@ -170,6 +170,7 @@ int main(int argc, char **argv) {
                     break;
                 }
             }
+        }
     }
 
     uint64_t t1 = now_ns();
