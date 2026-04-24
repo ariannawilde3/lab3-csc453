@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-     record_t *ring = (record_t *)((uint8_t)mem + sizeof(shm_header_t));
+     record_t *ring = (record_t *)((uint8_t)hdr + sizeof(shm_header_t));
 
     close(fd);
 
